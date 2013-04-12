@@ -143,7 +143,7 @@ public class ExpandList extends Activity {
 		elvMain.setAdapter(adapter);
 
 		c.close();
-
+		//dbOpenHelper.close();
 	}
 
 }

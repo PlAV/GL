@@ -5,17 +5,37 @@
     android:background="#000"
     android:orientation="vertical" >
 
-    <EditText
-        android:id="@+id/editText1"
-        android:layout_width="200dp"
-        android:layout_height="50dp"
-        android:ems="10" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp" >
 
-   <ExpandableListView
-       android:id="@+id/elvMain2"
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"
-       android:fitsSystemWindows="false" >
-   </ExpandableListView>
+        <EditText
+            android:id="@+id/srhField"
+            android:layout_width="@dimen/srh_field_width"
+            android:layout_height="@dimen/srh_btn_height"
+            android:layout_alignParentLeft="true"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="@string/search_hint"
+            android:padding="2dp"
+            android:textSize="15sp" />
+
+        <Button
+            android:id="@+id/srhAdd"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="@dimen/srh_btn_width"
+            android:layout_height="@dimen/srh_btn_height"
+            android:layout_alignParentRight="true"
+            android:text="@string/search_add" />
+
+    </RelativeLayout>
+
+    <ExpandableListView
+        android:id="@+id/elvMain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="false" >
+    </ExpandableListView>
 
 </LinearLayout>

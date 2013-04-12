@@ -17,6 +17,12 @@ public final class R {
     public static final class color {
         public static final int colorRow=0x7f060000;
     }
+    public static final class dimen {
+        public static final int srh_btn_height=0x7f070003;
+        public static final int srh_btn_width=0x7f070002;
+        public static final int srh_field_height=0x7f070001;
+        public static final int srh_field_width=0x7f070000;
+    }
     public static final class drawable {
         public static final int autoparts=0x7f020000;
         public static final int border=0x7f020001;
@@ -32,44 +38,43 @@ public final class R {
         public static final int salon=0x7f02000b;
     }
     public static final class id {
-        public static final int brake=0x7f090010;
-        public static final int clutch=0x7f090016;
-        public static final int editText1=0x7f09001e;
-        public static final int electric=0x7f090018;
-        public static final int elvMain=0x7f090000;
-        public static final int elvMain2=0x7f09001f;
-        public static final int engine=0x7f090012;
-        public static final int filters=0x7f090009;
-        public static final int headerText=0x7f090002;
-        public static final int headerView=0x7f090004;
-        public static final int imageView1=0x7f090005;
-        public static final int imgV=0x7f090020;
-        public static final int linkRusForum=0x7f090024;
-        public static final int linkUkrForum=0x7f090023;
-        public static final int logoTitle=0x7f090021;
-        public static final int menu_settings=0x7f090025;
-        public static final int pendant=0x7f09000c;
-        public static final int salon=0x7f09001a;
-        public static final int scrollView1=0x7f090006;
-        public static final int srhBtn=0x7f09000a;
-        public static final int steer=0x7f09000e;
-        public static final int tableMenu=0x7f090007;
-        public static final int tableRow1=0x7f090008;
-        public static final int tableRow10=0x7f09001b;
-        public static final int tableRow2=0x7f09000b;
-        public static final int tableRow3=0x7f09000d;
-        public static final int tableRow4=0x7f09000f;
-        public static final int tableRow5=0x7f090011;
-        public static final int tableRow6=0x7f090013;
-        public static final int tableRow7=0x7f090015;
-        public static final int tableRow8=0x7f090017;
-        public static final int tableRow9=0x7f090019;
-        public static final int text1=0x7f09001d;
-        public static final int textVersion=0x7f090022;
-        public static final int textView1=0x7f090003;
-        public static final int transmission=0x7f090014;
-        public static final int trim=0x7f09001c;
-        public static final int tvText=0x7f090001;
+        public static final int brake=0x7f0a000f;
+        public static final int clutch=0x7f0a0015;
+        public static final int electric=0x7f0a0017;
+        public static final int elvMain=0x7f0a0000;
+        public static final int engine=0x7f0a0011;
+        public static final int filters=0x7f0a0009;
+        public static final int headerText=0x7f0a0002;
+        public static final int imageView1=0x7f0a0005;
+        public static final int imgV=0x7f0a001f;
+        public static final int linkRusForum=0x7f0a0023;
+        public static final int linkUkrForum=0x7f0a0022;
+        public static final int logoTitle=0x7f0a0020;
+        public static final int menu_settings=0x7f0a0024;
+        public static final int pendant=0x7f0a000b;
+        public static final int salon=0x7f0a0019;
+        public static final int scrollView1=0x7f0a0006;
+        public static final int srhAdd=0x7f0a001e;
+        public static final int srhBtn=0x7f0a0004;
+        public static final int srhField=0x7f0a001d;
+        public static final int steer=0x7f0a000d;
+        public static final int tableMenu=0x7f0a0007;
+        public static final int tableRow1=0x7f0a0008;
+        public static final int tableRow10=0x7f0a001a;
+        public static final int tableRow2=0x7f0a000a;
+        public static final int tableRow3=0x7f0a000c;
+        public static final int tableRow4=0x7f0a000e;
+        public static final int tableRow5=0x7f0a0010;
+        public static final int tableRow6=0x7f0a0012;
+        public static final int tableRow7=0x7f0a0014;
+        public static final int tableRow8=0x7f0a0016;
+        public static final int tableRow9=0x7f0a0018;
+        public static final int text1=0x7f0a001c;
+        public static final int textVersion=0x7f0a0021;
+        public static final int textView1=0x7f0a0003;
+        public static final int transmission=0x7f0a0013;
+        public static final int trim=0x7f0a001b;
+        public static final int tvText=0x7f0a0001;
     }
     public static final class layout {
         public static final int catalog=0x7f030000;
@@ -84,7 +89,7 @@ public final class R {
         public static final int startlogo=0x7f030009;
     }
     public static final class menu {
-        public static final int main=0x7f080000;
+        public static final int main=0x7f090000;
     }
     public static final class string {
         public static final int aboutText=0x7f05000d;
@@ -117,10 +122,10 @@ public final class R {
             backward-compatibility can go here.
         
          */
-        public static final int AppBaseTheme=0x7f070000;
+        public static final int AppBaseTheme=0x7f080000;
         /**  Application theme. 
  All customizations that are NOT specific to a particular API-level can go here. 
          */
-        public static final int AppTheme=0x7f070001;
+        public static final int AppTheme=0x7f080001;
     }
 }

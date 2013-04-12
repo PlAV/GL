@@ -10,29 +10,29 @@
     <string name="items">Items</string>
     <string name="adapter">Adapter</string>
     <string name="cursor">Cursor</string>
-    
-    <string name="logoTitle">
-         Пополняемый каталог запчастей
+    <string name="logoTitle">         Пополняемый каталог запчастей
 		(аналоги и оригиналы)
-		на GEELY MK, Cross
-	</string>
-   
-     <string name="version">0.2</string>
-    
+		на GEELY MK, Cross</string>
+    <string name="version">0.2</string>
     <string name="linkUkrForum">www.geely-club.com.ua/forum/</string>
     <string name="linkRusForum">www.geely-club.com/forum/</string>
     <string name="menuAbout">О каталоге</string>
     <string name="chooseModel">Марка авто</string>
-    
     <string name="aboutTitle">О каталоге</string>
-     <string name="aboutText">
-       Данное приложение представляет собой каталог  аналогов запчастей  для автомобилей Geely MK/MK2/CROSS,
+    <string name="aboutText">       Данное приложение представляет собой каталог  аналогов запчастей  для автомобилей Geely MK/MK2/CROSS,
        собранный благодаря стараниям пользователей украинского и российского джили клубов.
        Условием занесения артикула детали в  каталог, является предварительная установка и  подтверждение совместимости с указанным автомобилем.
-       Обращаю Ваше  внимание, что никто не дает 100% гарантии на  совместимость деталей, поэтому  перед покупкой убедитесь в правильном подборе аналога.
-      </string>
-      <string name="yes">Ознакомлен</string>
-	<string name="search_hint">Поиск</string>
-	<string name="search_add">Найти</string>
-	<string name="search_no_records">Нет результатов</string>
+       Обращаю Ваше  внимание, что никто не дает 100% гарантии на  совместимость деталей, поэтому  перед покупкой убедитесь в правильном подборе аналога.</string>
+    <string name="yes">Ознакомлен</string>
+    
+    
+    <string name="search_hint">Поиск</string>
+    <string name="search_add">Найти</string>
+    <string name="search_no_records">Нет результатов</string>
+    <dimen name="srh_field_width">175dp</dimen>
+    <dimen name="srh_field_height">35dp</dimen>
+    <dimen name="srh_btn_width">80dp</dimen>
+    <dimen name="srh_btn_height">35dp</dimen>
+   
+
 </resources>
