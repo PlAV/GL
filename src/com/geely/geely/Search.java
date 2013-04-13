@@ -28,7 +28,7 @@ public class Search extends Activity implements OnClickListener {
 	private static final String DB_NAME = "geelyParts";
 	private static final String COLUMN_NAME = "tMark";
 	private SQLiteDatabase database;
-	private String query;
+	String query;
 	
 	Cursor c2;
 	
@@ -36,9 +36,9 @@ public class Search extends Activity implements OnClickListener {
 	TextView tvTitle;
 	String title, queryStr;
 	SimpleCursorAdapter scAdapter;
-	String sqlQuery, sqlQuery2;
+	String sqlQuery, sqlQuery2, gpData;
 	
-	int id_category;
+	int id_category, id;
 	EditText srhField;
 	Button srhAdd;
 	ListView LvData;
@@ -55,6 +55,8 @@ public class Search extends Activity implements OnClickListener {
 
 	// список аттрибутов группы или элемента
 	Map<String, String> m;
+	
+	List<Integer> idOfGroups = new ArrayList<Integer>();
 
 	ExpandableListView elvMain;
 
@@ -64,7 +66,7 @@ public class Search extends Activity implements OnClickListener {
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.searchview);
 
-		System.out.println("!!!!!!!");
+		System.out.println("Ready for search");
 
 		srhField = (EditText) findViewById(R.id.srhField);
 		srhAdd = (Button) findViewById(R.id.srhAdd);
@@ -74,20 +76,30 @@ public class Search extends Activity implements OnClickListener {
 
 	@Override
 	public void onClick(View v) {
+		System.out.println("Click on srhBtn");
 		// TODO Auto-generated method stub
 		query = srhField.getText().toString();
-		showResult(query);
+		System.out.println("B" + query);
+		query = query.replaceAll(" ", ""); 
+		System.out.println("A" + query);
+		
+		if(queryStr != ""){
+			showResult();
+		}else{
+			System.out.println("EMPTY FIELD");
+		}
+		
+		
+	
 	}
 
 	@SuppressLint("DefaultLocale")
-	private void showResult(String query) {
+	private void showResult() {
 		// TODO Auto-generated method stub
+		query.toLowerCase().substring(1);
+		System.out.println("srh= " + query );
 		
-		System.out.println("srh " + query);
 		
-		incomInt = getIntent();
-		Intent incomInt = getIntent();
-		query = incomInt.getStringExtra("query");
 		
 		// открываем БД
 		ExternalDbOpenHelper dbOpenHelper = new ExternalDbOpenHelper(this,
@@ -95,72 +107,75 @@ public class Search extends Activity implements OnClickListener {
 		elvMain = (ExpandableListView) findViewById(R.id.elvMain);
 		database = dbOpenHelper.openDataBase();
 		
+		/*
+		 * Находим список категорий согласно поиску
+		 */
+		
+		
 		// заполняем коллекцию групп из массива с названиями групп
 		groupData = new ArrayList<Map<String, String>>();
-		System.out.println("2");
-		//queryStr = query.replaceAll(" ", "").toLowerCase().substring(1);
-		queryStr = "свечи";
-		System.out.println("3");
 		System.out.println("queryStr " + queryStr);
-		sqlQuery = "select _id, title, id_category from subcategory where id_category = 10"; 
+		sqlQuery = "select _id, title, id_category from subcategory where title LIKE '%" +query+ "%'"; 
+		
 		Log.d("SQL-", sqlQuery);
 		
 		c2 = database.rawQuery(sqlQuery, null);
-		
 		c2.moveToFirst();
 		
-		List<Integer> idOfGroups = new ArrayList<Integer>();
-		System.out.println("6");
+		
+		
 		if (!c2.isAfterLast()) {
-			System.out.println("7");
 			do {
-				System.out.println("8");
-				int id = c2.getInt(0);
-
-				// кидаем id в коллекцию
-				idOfGroups.add(id);
-				 System.out.println("countidOf" + idOfGroups.size());
-
-				String gpData = c2.getString(1);
+				//id = c2.getInt(0);
+				gpData = c2.getString(1);
 				id_category = c2.getInt(2);
+				
+				// кидаем id subcategory в коллекцию
+				idOfGroups.add(c2.getInt(0));
+				
+
+				
+				
 				String title = gpData.replaceAll(" +", " ");
-				Log.d("LOG-", "title=" + title);
+				
 				Log.d("LOG-", "id=" + id);
-				 Log.d("LOG-", "id_category=" + id_category);
+				Log.d("LOG-", "title=" + title);
+				Log.d("LOG-", "id_category=" + id_category);
+				
 				m = new HashMap<String, String>();
 				m.put("groupName", title);
 				groupData.add(m);
 			} while (c2.moveToNext());
 		}
-		// for (int id : idOfGroups) {
-		// System.out.println("countidOf" + id);
-		// }
-
-		// список аттрибутов групп для чтения
+		 System.out.println("countidOfCat" + idOfGroups.size());
+		 // список аттрибутов групп для чтения
 		String groupFrom[] = new String[] { "groupName" };
-
 		// список ID view-элементов, в которые будет помещены аттрибуты групп
 		int groupTo[] = new int[] { R.id.tvText };
 
+		
+		
+		
+		
 		// создаем коллекцию для коллекций элементов
 		childData = new ArrayList<ArrayList<Map<String, String>>>();
 
 		for (int i = 0; i < idOfGroups.size(); i++) {
-
+			Log.d("==", "=======================================");
 			// создаем коллекцию элементов для групп
 			childDataItem = new ArrayList<Map<String, String>>();
 			// добавляем к группе коллекции
-
-			System.out.println("tableNameBefore");
-			sqlQuery = "SELECT table_name FROM category WHERE _id = "
-					+ id_category;
+			Log.d("LOG-", "id_category2=" + id_category);
+			// Находим  имя таблицы из которой нужно взять данные
+			sqlQuery = "SELECT table_name FROM category WHERE _id = "	+ idOfGroups.get(i);
+			
 			Log.d("SQL-table_name ", sqlQuery);
 			c2 = database.rawQuery(sqlQuery, null);
 			c2.moveToFirst();
 			String table_name = c2.getString(0);
 			// Cursor c2 = database.rawQuery(sqlQuery , null);
 			// String table_name = c2.getString(0);
-			// System.out.println("tableName" + table_name);
+			 System.out.println("tableName" + table_name);
 			sqlQuery = "select " + COLUMN_NAME + " from " + table_name
 					+ " where id_subcategory =" + idOfGroups.get(i);
 
@@ -173,7 +188,7 @@ public class Search extends Activity implements OnClickListener {
 					String data = c2.getString(0);
 					String tMark = data.replaceAll(" +", " ");
 					Log.d(COLUMN_NAME, tMark);
-					Log.d("data", data);
+					//Log.d("data", data);
 					// заполняем список аттрибутов для каждого элемента
 					m = new HashMap<String, String>();
 					m.put("tMark", tMark); // название
@@ -191,17 +206,16 @@ public class Search extends Activity implements OnClickListener {
 		// элементов
 		int childTo[] = new int[] { R.id.textView1 };
 
-		Log.d("TEST", "TEST");
 		SimpleExpandableListAdapter adapter = new SimpleExpandableListAdapter(
-				this, groupData, R.layout.groupsrh, groupFrom, groupTo,
-				childData, R.layout.itemssrh, childFrom, childTo);
+				this, groupData, R.layout.group, groupFrom, groupTo,
+				childData, R.layout.items, childFrom, childTo);
 
-		View headerView = getLayoutInflater().inflate(R.layout.header, null);
-		((TextView) headerView.findViewById(R.id.headerText)).setText(title);
+		//View headerView = getLayoutInflater().inflate(R.layout.header, null);
+		//((TextView) headerView.findViewById(R.id.headerText)).setText(title);
 
-		elvMain.addHeaderView(headerView);
+		//elvMain.addHeaderView(headerView);
 		elvMain.setAdapter(adapter);
-		query = null;
+		//query = null;
 		c2.close();
 	}
 
