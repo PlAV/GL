@@ -30,9 +30,9 @@
     <string name="search_add">Найти</string>
     <string name="search_no_records">Нет результатов</string>
     <dimen name="srh_field_width">175dp</dimen>
-    <dimen name="srh_field_height">35dp</dimen>
+    <dimen name="srh_field_height">45dp</dimen>
     <dimen name="srh_btn_width">80dp</dimen>
-    <dimen name="srh_btn_height">35dp</dimen>
+    <dimen name="srh_btn_height">45dp</dimen>
    
 
 </resources>

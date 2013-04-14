@@ -29,12 +29,11 @@ public class Search extends Activity implements OnClickListener {
 	private static final String COLUMN_NAME = "tMark";
 	private SQLiteDatabase database;
 	String query;
-	
-	Cursor c2;
+	Cursor c;
 	
 	
 	TextView tvTitle;
-	String title, queryStr;
+	String title, queryStr, queryStrUp;
 	SimpleCursorAdapter scAdapter;
 	String sqlQuery, sqlQuery2, gpData;
 	
@@ -56,7 +55,7 @@ public class Search extends Activity implements OnClickListener {
 	// список аттрибутов группы или элемента
 	Map<String, String> m;
 	
-	List<Integer> idOfGroups = new ArrayList<Integer>();
+	
 
 	ExpandableListView elvMain;
 
@@ -79,11 +78,9 @@ public class Search extends Activity implements OnClickListener {
 		System.out.println("Click on srhBtn");
 		// TODO Auto-generated method stub
 		query = srhField.getText().toString();
-		System.out.println("B" + query);
 		query = query.replaceAll(" ", ""); 
-		System.out.println("A" + query);
 		
-		if(queryStr != ""){
+		if(queryStr != " "){
 			showResult();
 		}else{
 			System.out.println("EMPTY FIELD");
@@ -95,12 +92,17 @@ public class Search extends Activity implements OnClickListener {
 
 	@SuppressLint("DefaultLocale")
 	private void showResult() {
+		List<Integer> idOfGroups = new ArrayList<Integer>();
+		List<Integer> idOfCats = new ArrayList<Integer>();
+		//Cursor c;
 		// TODO Auto-generated method stub
-		query.toLowerCase().substring(1);
-		System.out.println("srh= " + query );
 		
 		
 		
+		//queryStr  = query.toLowerCase().substring(1);
+		queryStr  = query.toLowerCase();
+		String queryFc = query.substring(0,1).toUpperCase();
+		queryStrUp = queryFc.concat(query.substring(1));
 		// открываем БД
 		ExternalDbOpenHelper dbOpenHelper = new ExternalDbOpenHelper(this,
 				DB_NAME);
@@ -110,32 +112,31 @@ public class Search extends Activity implements OnClickListener {
 		/*
 		 * Находим список категорий согласно поиску
 		 */
-		
-		
 		// заполняем коллекцию групп из массива с названиями групп
 		groupData = new ArrayList<Map<String, String>>();
 		System.out.println("queryStr " + queryStr);
-		sqlQuery = "select _id, title, id_category from subcategory where title LIKE '%" +query+ "%'"; 
+		System.out.println("queryStrUp " + queryStrUp);
+		sqlQuery = "SELECT _id, title, id_category FROM subcategory WHERE (title LIKE '%" +queryStr+ "%' OR title LIKE '%" + queryStrUp + "%')"; 
 		
 		Log.d("SQL-", sqlQuery);
 		
-		c2 = database.rawQuery(sqlQuery, null);
-		c2.moveToFirst();
+		c = database.rawQuery(sqlQuery, null);
+		c.moveToFirst();
 		
 		
 		
-		if (!c2.isAfterLast()) {
+		if (!c.isAfterLast()) {
 			do {
-				//id = c2.getInt(0);
-				gpData = c2.getString(1);
-				id_category = c2.getInt(2);
+				id = c.getInt(0);
+				gpData = c.getString(1);
+				id_category = c.getInt(2);
 				
 				// кидаем id subcategory в коллекцию
-				idOfGroups.add(c2.getInt(0));
+				idOfGroups.add(c.getInt(0));
 				
-
-				
-				
+				// кидаем id category в коллекцию
+				idOfCats.add(c.getInt(2));
+								
 				String title = gpData.replaceAll(" +", " ");
 				
 				Log.d("LOG-", "id=" + id);
@@ -145,9 +146,16 @@ public class Search extends Activity implements OnClickListener {
 				m = new HashMap<String, String>();
 				m.put("groupName", title);
 				groupData.add(m);
-			} while (c2.moveToNext());
+			} while (c.moveToNext());
 		}
-		 System.out.println("countidOfCat" + idOfGroups.size());
+		
+		// Содержание массива с айдишками подкатегорий
+		for (int ss : idOfGroups){
+			System.out.println("ss = " + ss);
+		}
+		
+		 System.out.println("countidOfCat= " + idOfGroups.size());
+		
 		 // список аттрибутов групп для чтения
 		String groupFrom[] = new String[] { "groupName" };
 		// список ID view-элементов, в которые будет помещены аттрибуты групп
@@ -162,44 +170,52 @@ public class Search extends Activity implements OnClickListener {
 
 		for (int i = 0; i < idOfGroups.size(); i++) {
 			Log.d("==", "=======================================");
+			System.out.println("idOfGroups.get(i) = " + idOfGroups.get(i));
 			// создаем коллекцию элементов для групп
 			childDataItem = new ArrayList<Map<String, String>>();
 			// добавляем к группе коллекции
-			Log.d("LOG-", "id_category2=" + id_category);
+			//Log.d("LOG-", "id_category2=" + id_category);
 			// Находим  имя таблицы из которой нужно взять данные
-			sqlQuery = "SELECT table_name FROM category WHERE _id = "	+ idOfGroups.get(i);
+			
+			
+			
+			sqlQuery = "SELECT table_name FROM category WHERE _id = (SELECT id_category FROM subcategory WHERE _id = " + idOfGroups.get(i) + " )";
 			
 			Log.d("SQL-table_name ", sqlQuery);
-			c2 = database.rawQuery(sqlQuery, null);
-			c2.moveToFirst();
-			String table_name = c2.getString(0);
-			// Cursor c2 = database.rawQuery(sqlQuery , null);
-			// String table_name = c2.getString(0);
-			 System.out.println("tableName" + table_name);
+			
+			Cursor c3 = database.rawQuery(sqlQuery, null);
+			c3.moveToFirst();
+			String table_name = c3.getString(0);
+			
+			System.out.println("tableName" + table_name);
+			 
+			 
 			sqlQuery = "select " + COLUMN_NAME + " from " + table_name
 					+ " where id_subcategory =" + idOfGroups.get(i);
 
 			Log.d("SQL-", sqlQuery);
-			c2 = database.rawQuery(sqlQuery, null);
-			c2.moveToFirst();
-			System.out.println("count" + c2.getCount());
-			if (!c2.isAfterLast()) {
+			c3 = database.rawQuery(sqlQuery, null);
+			c3.moveToFirst();
+			System.out.println("count" + c3.getCount());
+			if (!c3.isAfterLast()) {
 				do {
-					String data = c2.getString(0);
+					String data = c3.getString(0);
 					String tMark = data.replaceAll(" +", " ");
 					Log.d(COLUMN_NAME, tMark);
-					//Log.d("data", data);
 					// заполняем список аттрибутов для каждого элемента
 					m = new HashMap<String, String>();
 					m.put("tMark", tMark); // название
 					// добавляем в коллекцию коллекций
 					childDataItem.add(m);
-				} while (c2.moveToNext());
+				} while (c3.moveToNext());
 			}
+			
 			childData.add(childDataItem);
 			Log.d("==", "=======================================");
 		}
 
+		
+		
 		// список аттрибутов элементов для чтения
 		String childFrom[] = new String[] { "tMark" };
 		// список ID view-элементов, в которые будет помещены аттрибуты
@@ -210,13 +226,9 @@ public class Search extends Activity implements OnClickListener {
 				this, groupData, R.layout.group, groupFrom, groupTo,
 				childData, R.layout.items, childFrom, childTo);
 
-		//View headerView = getLayoutInflater().inflate(R.layout.header, null);
-		//((TextView) headerView.findViewById(R.id.headerText)).setText(title);
-
-		//elvMain.addHeaderView(headerView);
 		elvMain.setAdapter(adapter);
-		//query = null;
-		c2.close();
+		
+		c.close();
 	}
 
 }
