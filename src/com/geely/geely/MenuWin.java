@@ -23,7 +23,7 @@ public class MenuWin extends Activity implements OnClickListener {
 	String group;
 	int num;
 	Intent intent, srhIntent;
-	Button srhBtn;
+	Button srhBtn, infoBtn;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +49,8 @@ public class MenuWin extends Activity implements OnClickListener {
 		tv9 = (TextView) findViewById(R.id.salon);
 		tv10 = (TextView) findViewById(R.id.trim);
 		srhBtn = (Button) findViewById(R.id.srhBtn);
+		infoBtn = (Button) findViewById(R.id.infoBtn);
+		
 		tv1.setOnClickListener(this);
 		tv2.setOnClickListener(this);
 		tv3.setOnClickListener(this);
@@ -60,9 +62,9 @@ public class MenuWin extends Activity implements OnClickListener {
 		tv9.setOnClickListener(this);
 		tv10.setOnClickListener(this);
 		srhBtn.setOnClickListener(this);
-
-		ImageView imgView = (ImageView) findViewById(R.id.imageView1);
-		imgView.setAlpha(70);
+		infoBtn.setOnClickListener(this);
+//		ImageView imgView = (ImageView) findViewById(R.id.imageView1);
+//		imgView.setAlpha(70);
 
 		
 		
@@ -169,6 +171,9 @@ public class MenuWin extends Activity implements OnClickListener {
 			break;
 		case R.id.srhBtn:
 			startActivity(srhIntent);
+			return;
+		case R.id.infoBtn:
+			showDialog(1);
 			return;
 			
 		}

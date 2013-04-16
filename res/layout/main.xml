@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="right"
+    android:background="#000"
     android:gravity="right"
     tools:context=".MenuWin" >
 
@@ -20,221 +21,231 @@
             android:layout_alignParentTop="true"
             android:background="@drawable/ic_srch"
             android:height="48dp"
-            android:nextFocusLeft="@anim/myalpha"
             android:width="48dp" />
 
-    </RelativeLayout>
+        <Button
+            android:id="@+id/infoBtn"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:height="40dp"
+            android:text="info"
+            android:width="40dp" />
 
-    <ImageView
-        android:id="@+id/imageView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerInParent="true"
-        android:layout_centerVertical="true"
-        android:src="@drawable/main_bg" />
+    </RelativeLayout>
 
     <ScrollView
         android:id="@+id/scrollView1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="35dp" >
+        android:layout_marginTop="45dp" >
 
         <TableLayout
             android:id="@+id/tableMenu"
-            android:layout_width="match_parent"
-            android:layout_height="fill_parent"
+            android:layout_width="@dimen/menu_table_width"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
             android:clickable="true"
-            android:focusable="true"
-            android:padding="15dp" >
+            android:focusable="true" >
 
             <TableRow
                 android:id="@+id/tableRow1"
-                android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:layout_gravity="left"
-                android:focusable="true"
-                android:gravity="left" >
+                android:layout_height="@dimen/menu_btn_height"
+                android:layout_marginTop="@dimen/menu_margtop_btn"
+                android:focusable="true" >
 
                 <Button
                     android:id="@+id/filters"
                     style="?android:attr/buttonStyleSmall"
-                    android:layout_width="200dp"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="left"
+                    android:layout_gravity="center_horizontal"
                     android:clickable="true"
                     android:focusable="true"
                     android:text="Фильтры"
                     android:textColor="#000"
-                    android:textSize="15dp"
+                    android:textSize="@dimen/menu_textsize_btn"
                     android:textStyle="bold"
-                    android:typeface="normal" />
+                    android:typeface="normal"
+                    android:width="@dimen/menu_table_width" />
+
             </TableRow>
 
             <TableRow
                 android:id="@+id/tableRow2"
                 android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:gravity="right" >
+                android:layout_height="@dimen/menu_btn_height"
+                android:layout_marginTop="@dimen/menu_margtop_btn" >
 
                 <Button
                     android:id="@+id/pendant"
                     style="?android:attr/buttonStyleSmall"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_gravity="right"
-                    android:gravity="right"
+                    android:layout_gravity="center_horizontal"
                     android:radius="7dp"
                     android:text="Подвеска"
                     android:textColor="#000"
-                    android:textSize="15dp"
-                    android:textStyle="bold" />
+                    android:textSize="@dimen/menu_textsize_btn"
+                    android:textStyle="bold"
+                    android:width="@dimen/menu_table_width" />
+
             </TableRow>
 
             <TableRow
                 android:id="@+id/tableRow3"
                 android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:layout_gravity="top"
-                android:gravity="left" >
+                android:layout_height="@dimen/menu_btn_height"
+                android:layout_marginTop="@dimen/menu_margtop_btn" >
 
                 <Button
                     android:id="@+id/steer"
                     style="?android:attr/buttonStyleSmall"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_gravity="left"
+                    android:layout_gravity="center_horizontal"
+                    
                     android:text="Рулевая"
                     android:textColor="#000"
-                    android:textSize="15dp"
-                    android:textStyle="bold" />
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:width="@dimen/menu_table_width" />
+
             </TableRow>
 
             <TableRow
                 android:id="@+id/tableRow4"
                 android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:gravity="right" >
+                android:layout_height="@dimen/menu_btn_height"
+                android:layout_marginTop="@dimen/menu_margtop_btn" >
 
                 <Button
                     android:id="@+id/brake"
                     style="?android:attr/buttonStyleSmall"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_gravity="right"
+                    android:layout_gravity="center_horizontal"
                     android:text="Тормоза"
                     android:textColor="#000"
-                    android:textSize="15dp"
-                    android:textStyle="bold" />
+                    android:textSize="@dimen/menu_textsize_btn"
+                    android:textStyle="bold"
+                    android:width="@dimen/menu_table_width" />
+
             </TableRow>
 
             <TableRow
                 android:id="@+id/tableRow5"
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
-                android:gravity="left" >
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/menu_btn_height"
+                android:layout_marginTop="@dimen/menu_margtop_btn" >
 
                 <Button
                     android:id="@+id/engine"
                     style="?android:attr/buttonStyleSmall"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_gravity="left"
+                    android:layout_gravity="center_horizontal"
                     android:text="Двигатель"
                     android:textColor="#000"
-                    android:textSize="15dp"
-                    android:textStyle="bold" />
+                    android:textSize="@dimen/menu_textsize_btn"
+                    android:textStyle="bold"
+                    android:width="@dimen/menu_table_width" />
+
             </TableRow>
 
             <TableRow
                 android:id="@+id/tableRow6"
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
-                android:gravity="right" >
+                android:layout_height="@dimen/menu_btn_height"
+                android:layout_marginTop="@dimen/menu_margtop_btn"
+                android:focusable="true" >
 
                 <Button
                     android:id="@+id/transmission"
                     style="?android:attr/buttonStyleSmall"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_gravity="right"
+                    android:layout_gravity="center_horizontal"
                     android:text="Трансмиссия"
                     android:textColor="#000"
-                    android:textSize="15dp"
-                    android:textStyle="bold" />
+                    android:textSize="@dimen/menu_textsize_btn"
+                    android:textStyle="bold"
+                    android:width="@dimen/menu_table_width" />
+
             </TableRow>
 
             <TableRow
                 android:id="@+id/tableRow7"
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_height="@dimen/menu_btn_height"
+                android:layout_marginTop="@dimen/menu_margtop_btn"
                 android:gravity="left" >
 
                 <Button
                     android:id="@+id/clutch"
                     style="?android:attr/buttonStyleSmall"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="left"
+                    android:layout_gravity="center_horizontal"
                     android:text="Сцепление"
                     android:textColor="#000"
-                    android:textSize="15dp"
-                    android:textStyle="bold" />
+                    android:textSize="@dimen/menu_textsize_btn"
+                    android:textStyle="bold"
+                    android:width="@dimen/menu_table_width" />
+
             </TableRow>
 
             <TableRow
                 android:id="@+id/tableRow8"
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
-                android:gravity="right" >
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/menu_btn_height"
+                android:layout_marginTop="@dimen/menu_margtop_btn" >
 
                 <Button
                     android:id="@+id/electric"
                     style="?android:attr/buttonStyleSmall"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="right"
+                    android:layout_gravity="center_horizontal"
                     android:text="Электрика"
                     android:textColor="#000"
-                    android:textSize="15dp"
-                    android:textStyle="bold" />
+                    android:textSize="@dimen/menu_textsize_btn"
+                    android:textStyle="bold"
+                    android:width="@dimen/menu_table_width" />
+
             </TableRow>
 
             <TableRow
                 android:id="@+id/tableRow9"
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
-                android:gravity="left"
-                android:padding="5dp" >
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/menu_btn_height"
+                android:layout_marginTop="@dimen/menu_margtop_btn" >
 
                 <Button
                     android:id="@+id/salon"
                     style="?android:attr/buttonStyleSmall"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="left"
+                    android:layout_gravity="center_horizontal"
                     android:text="Салон"
                     android:textColor="#000"
-                    android:textSize="15dp"
-                    android:textStyle="bold" />
+                    android:textSize="@dimen/menu_textsize_btn"
+                    android:textStyle="bold"
+                    android:width="@dimen/menu_table_width" />
+
             </TableRow>
 
             <TableRow
                 android:id="@+id/tableRow10"
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
-                android:gravity="right" >
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/menu_btn_height"
+                android:layout_marginTop="@dimen/menu_margtop_btn" >
 
                 <Button
                     android:id="@+id/trim"
                     style="?android:attr/buttonStyleSmall"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="right"
-                    android:text="Внешняя отделка"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Разное"
                     android:textColor="#000"
-                    android:textSize="15dp"
-                    android:textStyle="bold" />
+                    android:textSize="@dimen/menu_textsize_btn"
+                    android:textStyle="bold"
+                    android:width="@dimen/menu_table_width" />
+
             </TableRow>
         </TableLayout>
     </ScrollView>

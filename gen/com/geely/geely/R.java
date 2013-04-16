@@ -18,6 +18,10 @@ public final class R {
         public static final int colorRow=0x7f060000;
     }
     public static final class dimen {
+        public static final int menu_btn_height=0x7f070005;
+        public static final int menu_margtop_btn=0x7f070006;
+        public static final int menu_table_width=0x7f070004;
+        public static final int menu_textsize_btn=0x7f070007;
         public static final int srh_btn_height=0x7f070003;
         public static final int srh_btn_width=0x7f070002;
         public static final int srh_field_height=0x7f070001;
@@ -45,8 +49,8 @@ public final class R {
         public static final int engine=0x7f0a0011;
         public static final int filters=0x7f0a0009;
         public static final int headerText=0x7f0a0002;
-        public static final int imageView1=0x7f0a0005;
         public static final int imgV=0x7f0a001f;
+        public static final int infoBtn=0x7f0a0005;
         public static final int linkRusForum=0x7f0a0023;
         public static final int linkUkrForum=0x7f0a0022;
         public static final int logoTitle=0x7f0a0020;

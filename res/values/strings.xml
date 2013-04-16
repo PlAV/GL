@@ -33,6 +33,10 @@
     <dimen name="srh_field_height">45dp</dimen>
     <dimen name="srh_btn_width">80dp</dimen>
     <dimen name="srh_btn_height">45dp</dimen>
+    <dimen name="menu_table_width">200dp</dimen>
+    <dimen name="menu_btn_height">30dp</dimen>
+    <dimen name="menu_margtop_btn">2dp</dimen>
+    <dimen name="menu_textsize_btn">16sp</dimen>
    
 
 </resources>
