@@ -3,14 +3,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="right"
-    android:background="#000"
+    android:background="@drawable/menu_bg"
     android:gravity="right"
     tools:context=".MenuWin" >
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="45dp"
-        android:background="#B7B7C1" >
+        android:background="@drawable/bg" >
 
         <Button
             android:id="@+id/srhBtn"
@@ -19,21 +19,17 @@
             android:layout_height="48dp"
             android:layout_alignParentRight="true"
             android:layout_alignParentTop="true"
-            android:background="@drawable/ic_srch"
-            android:height="48dp"
+            android:background="@drawable/ic_srh_btn48"
+            android:height="40dp"
             android:width="48dp" />
 
         <Button
             android:id="@+id/infoBtn"
             style="?android:attr/buttonStyleSmall"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="5dp"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/ic_info_btn48"
             android:height="40dp"
-            android:text="info"
             android:width="40dp" />
 
     </RelativeLayout>
@@ -41,7 +37,7 @@
     <ScrollView
         android:id="@+id/scrollView1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_marginTop="45dp" >
 
         <TableLayout
@@ -49,6 +45,7 @@
             android:layout_width="@dimen/menu_table_width"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="10dp"
             android:layout_marginTop="10dp"
             android:clickable="true"
             android:focusable="true" >

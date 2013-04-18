@@ -14,6 +14,7 @@
 		(аналоги и оригиналы)
 		на GEELY MK, Cross</string>
     <string name="version">0.3</string>
+    <string name="version_code">6</string>
     <string name="linkUkrForum">www.geely-club.com.ua/forum/</string>
     <string name="linkRusForum">www.geely-club.com/forum/</string>
     <string name="menuAbout">О каталоге</string>
@@ -37,6 +38,8 @@
     <dimen name="menu_btn_height">30dp</dimen>
     <dimen name="menu_margtop_btn">2dp</dimen>
     <dimen name="menu_textsize_btn">16sp</dimen>
+   
+    
    
 
 </resources>
