@@ -37,18 +37,17 @@ public final class R {
         public static final int ic_info_btn48=0x7f020006;
         public static final int ic_info_btn72=0x7f020007;
         public static final int ic_launcher=0x7f020008;
-        public static final int ic_logo72=0x7f020009;
-        public static final int ic_srh_btn48=0x7f02000a;
-        public static final int ic_srh_btn72=0x7f02000b;
-        public static final int info_btn_48=0x7f02000c;
-        public static final int info_btn_72=0x7f02000d;
+        public static final int ic_srch=0x7f020009;
+        public static final int ic_srch_a=0x7f02000a;
+        public static final int ic_srh_btn48=0x7f02000b;
+        public static final int ic_srh_btn72=0x7f02000c;
+        public static final int info_btn=0x7f02000d;
         public static final int main_bg=0x7f02000e;
         public static final int main_bg2=0x7f02000f;
         public static final int menu_bg=0x7f020010;
         public static final int mk_new_7=0x7f020011;
         public static final int salon=0x7f020012;
-        public static final int srh_btn_48=0x7f020013;
-        public static final int srh_btn_72=0x7f020014;
+        public static final int srh_btn=0x7f020013;
     }
     public static final class id {
         public static final int brake=0x7f0a000f;
