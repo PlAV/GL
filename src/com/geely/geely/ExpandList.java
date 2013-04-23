@@ -12,12 +12,13 @@ import android.database.sqlite.SQLiteDatabase;
 import android.support.v4.widget.SimpleCursorAdapter;
 import android.util.Log;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.ExpandableListView;
 import android.widget.ListView;
 import android.widget.SimpleExpandableListAdapter;
 import android.widget.TextView;
 
-public class ExpandList extends Activity {
+public class ExpandList extends Activity  {
 
 	private static final String DB_NAME = "geelyParts";
 	private static final String COLUMN_NAME = "tMark";
@@ -29,8 +30,8 @@ public class ExpandList extends Activity {
 	SimpleCursorAdapter scAdapter;
 	String sqlQuery, sqlQuery2;
 	int id_category;
-
 	ListView LvData;
+	TextView tmarkText;
 
 	// коллекция для групп
 	ArrayList<Map<String, String>> groupData;
@@ -47,7 +48,14 @@ public class ExpandList extends Activity {
 
 	public ExpandList(Context context, String tbName, int ID_CAT,
 			ExpandableListView elvMain, View headerView) {
-
+		
+//		tmarkText =  (TextView) findViewById(R.id.textView1);
+//		System.out.println("test " );
+		//tmarkText.setOnClickListener(this);
+		 
+		
+		
+		
 		// открываем БД
 		ExternalDbOpenHelper dbOpenHelper = new ExternalDbOpenHelper(context,
 				DB_NAME);
@@ -145,5 +153,11 @@ public class ExpandList extends Activity {
 		c.close();
 		//dbOpenHelper.close();
 	}
+
+	public void OnCreateContextMenu(){
+		System.out.println("test22 ");
+	}
+
+	
 
 }

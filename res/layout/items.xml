@@ -12,7 +12,6 @@
         android:background="#000"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
-        android:text="TextView"
         android:textColor="#FFFFFF"
         android:textSize="18sp" />
 

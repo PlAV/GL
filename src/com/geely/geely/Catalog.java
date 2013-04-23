@@ -8,9 +8,10 @@ import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.widget.ExpandableListView;
+import android.widget.ExpandableListView.OnChildClickListener;
 import android.widget.TextView;
 
-public class Catalog extends Activity {
+public class Catalog extends Activity implements OnChildClickListener {
 
 	final String LOG_TAG = "myLogs";
 	ExpandableListView elvMain;
@@ -51,7 +52,19 @@ public class Catalog extends Activity {
 
 		elvMain = (ExpandableListView) findViewById(R.id.elvMain);
 		new ExpandList(this, tbName, num, elvMain, headerView);
+		
+		elvMain.setOnChildClickListener(this);
+		//TextView tmarkText =  (TextView) findViewById(R.id.textView1);
+		//System.out.println("test " + tmarkText.getText() );
+		
+	}
 
+	@Override
+	public boolean onChildClick(ExpandableListView arg0, View v, int arg2,
+			int childPosition, long arg4) {
+		System.out.println("test " + v.getContentDescription());		
+		// TODO Auto-generated method stub
+		return false;
 	}
 
 }

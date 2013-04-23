@@ -16,6 +16,7 @@ import android.support.v4.widget.SimpleCursorAdapter;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.View.OnLongClickListener;
 import android.view.Window;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
@@ -26,7 +27,7 @@ import android.widget.SimpleExpandableListAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class Search extends Activity implements OnClickListener {
+public class Search extends Activity implements OnClickListener, OnLongClickListener {
 
 	private static final String DB_NAME = "geelyParts";
 	private static final String COLUMN_NAME = "tMark";
@@ -44,6 +45,8 @@ public class Search extends Activity implements OnClickListener {
 	Button srhAdd;
 	ListView LvData;
 	Intent incomInt;
+	TextView tmarkText;
+	
 	// коллекция для групп
 	ArrayList<Map<String, String>> groupData;
 
@@ -70,6 +73,9 @@ public class Search extends Activity implements OnClickListener {
 		srhField = (EditText) findViewById(R.id.srhField);
 		srhAdd = (Button) findViewById(R.id.srhAdd);
 		srhAdd.setOnClickListener(this);
+		
+		
+		
 
 	}
 
@@ -228,5 +234,14 @@ public class Search extends Activity implements OnClickListener {
 		elvMain.setAdapter(adapter);
 
 		c.close();
+	}
+
+	@Override
+	public boolean onLongClick(View v) {
+		// TODO Auto-generated method stub
+		//System.out.println("test " + tmarkText.getText());
+		
+		
+		return false;
 	}
 }
