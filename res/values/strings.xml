@@ -10,11 +10,12 @@
     <string name="items">Items</string>
     <string name="adapter">Adapter</string>
     <string name="cursor">Cursor</string>
-    <string name="logoTitle">         Пополняемый каталог запчастей
-		(аналоги и оригиналы)
-		на GEELY MK, Cross</string>
-    <string name="version">0.3</string>
-    <string name="version_code">6</string>
+    <string name="logoTitle">
+        Пополняемый каталог
+         запчастей
+        (аналоги и оригиналы)
+          на GEELY MK, Cross</string>
+    <string name="year">2013</string>
     <string name="linkUkrForum">www.geely-club.com.ua/forum/</string>
     <string name="linkRusForum">www.geely-club.com/forum/</string>
     <string name="menuAbout">О каталоге</string>

@@ -3,12 +3,13 @@
         android:id="@+id/tvText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#123"
+        android:background="@layout/bg"
         android:gravity="left"
         android:minHeight="50dp"
         android:paddingLeft="40dp"
         android:paddingRight="5dp"
         android:textColor="#FFFFFF"
-        android:textSize="16dp" >
+        android:textSize="16sp"
+        android:tileMode="repeat" >
 	
     </TextView>

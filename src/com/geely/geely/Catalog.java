@@ -62,7 +62,7 @@ public class Catalog extends Activity implements OnChildClickListener {
 	@Override
 	public boolean onChildClick(ExpandableListView arg0, View v, int arg2,
 			int childPosition, long arg4) {
-		System.out.println("test " + v.getContentDescription());		
+		System.out.println("test " + v.toString());		
 		// TODO Auto-generated method stub
 		return false;
 	}

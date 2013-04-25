@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="right"
-    android:background="@drawable/menu_bg"
+    android:background="@layout/bg"
     android:gravity="right"
     tools:context=".MenuWin" >
 

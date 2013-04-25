@@ -89,40 +89,40 @@ public final class R {
         public static final int tvText=0x7f0a0001;
     }
     public static final class layout {
-        public static final int catalog=0x7f030000;
-        public static final int group=0x7f030001;
-        public static final int groupsrh=0x7f030002;
-        public static final int header=0x7f030003;
-        public static final int items=0x7f030004;
-        public static final int itemssrh=0x7f030005;
-        public static final int main=0x7f030006;
-        public static final int record=0x7f030007;
-        public static final int searchview=0x7f030008;
-        public static final int startlogo=0x7f030009;
+        public static final int bg=0x7f030000;
+        public static final int catalog=0x7f030001;
+        public static final int group=0x7f030002;
+        public static final int groupsrh=0x7f030003;
+        public static final int header=0x7f030004;
+        public static final int items=0x7f030005;
+        public static final int itemssrh=0x7f030006;
+        public static final int main=0x7f030007;
+        public static final int record=0x7f030008;
+        public static final int searchview=0x7f030009;
+        public static final int startlogo=0x7f03000a;
     }
     public static final class menu {
         public static final int main=0x7f090000;
     }
     public static final class string {
-        public static final int aboutText=0x7f05000e;
-        public static final int aboutTitle=0x7f05000d;
+        public static final int aboutText=0x7f05000d;
+        public static final int aboutTitle=0x7f05000c;
         public static final int adapter=0x7f050004;
         public static final int app_name=0x7f050000;
-        public static final int chooseModel=0x7f05000c;
+        public static final int chooseModel=0x7f05000b;
         public static final int cursor=0x7f050005;
         public static final int hello_world=0x7f050001;
         public static final int items=0x7f050003;
-        public static final int linkRusForum=0x7f05000a;
-        public static final int linkUkrForum=0x7f050009;
+        public static final int linkRusForum=0x7f050009;
+        public static final int linkUkrForum=0x7f050008;
         public static final int logoTitle=0x7f050006;
-        public static final int menuAbout=0x7f05000b;
+        public static final int menuAbout=0x7f05000a;
         public static final int menu_settings=0x7f050002;
-        public static final int search_add=0x7f050011;
-        public static final int search_hint=0x7f050010;
-        public static final int search_no_records=0x7f050012;
-        public static final int version=0x7f050007;
-        public static final int version_code=0x7f050008;
-        public static final int yes=0x7f05000f;
+        public static final int search_add=0x7f050010;
+        public static final int search_hint=0x7f05000f;
+        public static final int search_no_records=0x7f050011;
+        public static final int year=0x7f050007;
+        public static final int yes=0x7f05000e;
     }
     public static final class style {
         /** 
