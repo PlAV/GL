@@ -26,6 +26,7 @@
         <activity android:name="com.geely.geely.MenuWin">
         </activity>
         <activity android:name="Search"></activity>
+        <activity android:name="SearchFull"></activity>
     </application>
 
 </manifest>

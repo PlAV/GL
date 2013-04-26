@@ -32,7 +32,7 @@ public class MenuWin extends Activity implements OnClickListener {
 		setContentView(R.layout.main);
 
 		intent = new Intent(this, Catalog.class);
-		srhIntent = new Intent(this, Search.class);
+		srhIntent = new Intent(this, SearchFull.class);
 
 		TableLayout tableMenu = (TableLayout) findViewById(R.id.tableMenu);
 		Animation anim = AnimationUtils.loadAnimation(this, R.anim.myalpha);

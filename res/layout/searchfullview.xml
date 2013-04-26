@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@layout/bg"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp" >
+
+        <EditText
+            android:id="@+id/srhField"
+            android:layout_width="@dimen/srh_field_width"
+            android:layout_height="@dimen/srh_btn_height"
+            android:layout_alignParentLeft="true"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="@string/search_hint"
+            android:padding="2dp"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/srhAdd"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="@dimen/srh_btn_width"
+            android:layout_height="@dimen/srh_btn_height"
+            android:layout_alignParentRight="true"
+            android:text="@string/search_add" />
+    </RelativeLayout>
+
+    <ExpandableListView
+        android:id="@+id/elvMain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="false" >
+    </ExpandableListView>
+
+</LinearLayout>

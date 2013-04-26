@@ -28,7 +28,8 @@
     <string name="yes">Ознакомлен</string>
     
     
-    <string name="search_hint">Поиск</string>
+    <string name="search_hint">поиск аналога</string>
+    <string name="searchFull_hint">поиск</string>
     <string name="search_add">Найти</string>
     <string name="search_no_records">Нет результатов</string>
     <dimen name="srh_field_width">175dp</dimen>

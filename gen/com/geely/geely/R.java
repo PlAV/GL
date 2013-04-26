@@ -98,8 +98,9 @@ public final class R {
         public static final int itemssrh=0x7f030006;
         public static final int main=0x7f030007;
         public static final int record=0x7f030008;
-        public static final int searchview=0x7f030009;
-        public static final int startlogo=0x7f03000a;
+        public static final int searchfullview=0x7f030009;
+        public static final int searchview=0x7f03000a;
+        public static final int startlogo=0x7f03000b;
     }
     public static final class menu {
         public static final int main=0x7f090000;
@@ -118,9 +119,10 @@ public final class R {
         public static final int logoTitle=0x7f050006;
         public static final int menuAbout=0x7f05000a;
         public static final int menu_settings=0x7f050002;
-        public static final int search_add=0x7f050010;
+        public static final int searchFull_hint=0x7f050010;
+        public static final int search_add=0x7f050011;
         public static final int search_hint=0x7f05000f;
-        public static final int search_no_records=0x7f050011;
+        public static final int search_no_records=0x7f050012;
         public static final int year=0x7f050007;
         public static final int yes=0x7f05000e;
     }
