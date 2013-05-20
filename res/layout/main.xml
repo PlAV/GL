@@ -32,6 +32,13 @@
             android:height="40dp"
             android:width="40dp" />
 
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="MK/MK2/CROSS" />
+
     </RelativeLayout>
 
     <ScrollView

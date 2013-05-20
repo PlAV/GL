@@ -46,7 +46,7 @@ import android.widget.ImageView;
 	                    //Finish the splash activity so it can't be returned to.
 	                	MainActivity.this.finish();
 	                    // Create an Intent that will start the main activity.
-	                    Intent mainIntent = new Intent(MainActivity.this, MenuWin.class);
+	                    Intent mainIntent = new Intent(MainActivity.this, HomeWindow.class);
 	                   
 	                    MainActivity.this.startActivity(mainIntent);
 	                }

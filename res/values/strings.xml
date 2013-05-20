@@ -21,6 +21,11 @@
     <string name="menuAbout">О каталоге</string>
     <string name="chooseModel">Марка авто</string>
     <string name="aboutTitle">О каталоге</string>
+    
+    <string name="CK">CK/OTAKA</string>
+    <string name="MK">MK</string>
+    <string name="FC">FC/VISION</string>
+    
     <string name="aboutText">       Данное приложение представляет собой каталог  аналогов запчастей  для автомобилей Geely MK/MK2/CROSS,
        собранный благодаря стараниям пользователей украинского и российского джили клубов.
        Условием занесения артикула детали в  каталог, является предварительная установка и  подтверждение совместимости с указанным автомобилем.
