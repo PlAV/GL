@@ -20,8 +20,8 @@
             android:layout_marginBottom="20dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:text="Аналоги з/ч MK/CROSS"
-            android:textSize="18sp" />
+            android:text="Аналоги з/ч MK/MK2/CROSS"
+            android:textSize="20sp" />
 
         <Button
             android:id="@+id/originAll"
@@ -29,8 +29,8 @@
             android:layout_height="100dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:text="Поиск оригинальных з/ч на все модели Geely"
-            android:textSize="18sp" />
+            android:text="Поиск оригинальных з/ч на модельный ряд  Geely"
+            android:textSize="20sp" />
 
     </LinearLayout>
 
