@@ -225,7 +225,7 @@ public class Search extends Activity implements OnClickListener, OnLongClickList
 		String childFrom[] = new String[] { "tMark" };
 		// список ID view-элементов, в которые будет помещены аттрибуты
 		// элементов
-		int childTo[] = new int[] { R.id.textView1 };
+		int childTo[] = new int[] { R.id.noReLabel };
 
 		SimpleExpandableListAdapter adapter = new SimpleExpandableListAdapter(
 				this, groupData, R.layout.group, groupFrom, groupTo, childData,

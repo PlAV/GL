@@ -11,13 +11,13 @@
         android:padding="10dp" >
 
         <EditText
-            android:id="@+id/srhField"
+            android:id="@+id/fullSrhField"
             android:layout_width="@dimen/srh_field_width"
             android:layout_height="@dimen/srh_btn_height"
             android:layout_alignParentLeft="true"
             android:ems="10"
             android:gravity="center"
-            android:hint="@string/search_hint"
+            android:hint="@string/searchFull_hint"
             android:padding="2dp"
             android:textSize="20sp" />
 
@@ -30,11 +30,56 @@
             android:text="@string/search_add" />
     </RelativeLayout>
 
-    <ExpandableListView
-        android:id="@+id/elvMain"
+    <RadioGroup
+        android:id="@+id/radioGroupMarks"
         android:layout_width="match_parent"
+        android:layout_height="@dimen/srh_btn_height"
+        android:orientation="horizontal" >
+
+        <RadioButton
+            android:id="@+id/ck"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:checked="true"
+            android:text="@string/CK"
+            android:textColor="#33CC33" />
+
+        <RadioButton
+            android:id="@+id/mk"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/MK"
+            android:textColor="#33CC33" />
+
+        <RadioButton
+            android:id="@+id/fc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/FC"
+            android:textColor="#33CC33" />
+       
+    </RadioGroup>
+
+    <ListView
+        android:id="@+id/srhResult"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:cacheColorHint="#00000000" >
+
+    </ListView>
+
+    <TextView
+        android:id="@+id/noReLabel"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fitsSystemWindows="false" >
-    </ExpandableListView>
+        android:layout_gravity="center"
+        android:layout_marginTop="80dp"
+        android:gravity="center"
+        android:text="@string/search_no_records"
+        android:textColor="#808080"
+        android:textSize="16sp" />
 
 </LinearLayout>
