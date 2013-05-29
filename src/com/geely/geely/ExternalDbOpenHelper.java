@@ -12,13 +12,14 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
 public class ExternalDbOpenHelper extends SQLiteOpenHelper {
-
-	//Путь к папке с базами на устройстве
+	
+	// Путь к папке с базами на устройстве
 	public static String DB_PATH;
-	//Имя файла с базой
+	// Имя файла с базой
 	public static String DB_NAME;
 	public SQLiteDatabase database;
 	public final Context context;
+	public final Boolean UPDATE = true;
 
 	public SQLiteDatabase getDb() {
 		return database;
@@ -26,20 +27,24 @@ public class ExternalDbOpenHelper extends SQLiteOpenHelper {
 
 	public ExternalDbOpenHelper(Context context, String databaseName) {
 		super(context, databaseName, null, 1);
+		
+		
 		this.context = context;
-		//Составим полный путь к базам для вашего приложения
+		// Составим полный путь к базам для вашего приложения
 		String packageName = context.getPackageName();
 		DB_PATH = String.format("//data//data//%s//databases//", packageName);
 		DB_NAME = databaseName;
 		openDataBase();
 	}
 
-	//Создаст базу, если она не создана
+	// Создаст базу, если она не создана
 	public void createDataBase() {
 		boolean dbExist = checkDataBase();
-		if (!dbExist) {
+		System.out.println("2222222");
+		if (!dbExist || UPDATE) {
 			this.getReadableDatabase();
 			try {
+				System.out.println("11111111");
 				copyDataBase();
 			} catch (IOException e) {
 				Log.e(this.getClass().toString(), "Copying error");
@@ -49,7 +54,8 @@ public class ExternalDbOpenHelper extends SQLiteOpenHelper {
 			Log.i(this.getClass().toString(), "Database already exists");
 		}
 	}
-	//Проверка существования базы данных
+
+	// Проверка существования базы данных
 	private boolean checkDataBase() {
 		SQLiteDatabase checkDb = null;
 		try {
@@ -59,16 +65,17 @@ public class ExternalDbOpenHelper extends SQLiteOpenHelper {
 		} catch (SQLException e) {
 			Log.e(this.getClass().toString(), "Error while checking db");
 		}
-		//Андроид не любит утечки ресурсов, все должно закрываться
+		// Андроид не любит утечки ресурсов, все должно закрываться
 		if (checkDb != null) {
 			checkDb.close();
 		}
 		return checkDb != null;
 	}
-	//Метод копирования базы
+
+	// Метод копирования базы
 	private void copyDataBase() throws IOException {
 		// Открываем поток для чтения из уже созданной нами БД
-		//источник в assets
+		// источник в assets
 		InputStream externalDbStream = context.getAssets().open(DB_NAME);
 
 		// Путь к уже созданной пустой базе в андроиде
@@ -91,12 +98,15 @@ public class ExternalDbOpenHelper extends SQLiteOpenHelper {
 
 	public SQLiteDatabase openDataBase() throws SQLException {
 		String path = DB_PATH + DB_NAME;
+
 		if (database == null) {
 			createDataBase();
-			database = SQLiteDatabase.openDatabase(path, null,	SQLiteDatabase.OPEN_READWRITE);
+			database = SQLiteDatabase.openDatabase(path, null,
+					SQLiteDatabase.OPEN_READWRITE);
 		}
 		return database;
 	}
+
 	@Override
 	public synchronized void close() {
 		if (database != null) {
@@ -104,8 +114,12 @@ public class ExternalDbOpenHelper extends SQLiteOpenHelper {
 		}
 		super.close();
 	}
+
 	@Override
-	public void onCreate(SQLiteDatabase db) {}
+	public void onCreate(SQLiteDatabase db) {
+	}
+
 	@Override
-	public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {}
+	public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+	}
 }

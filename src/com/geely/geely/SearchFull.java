@@ -20,6 +20,7 @@ import android.widget.ListView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class SearchFull extends Activity implements OnClickListener {
 	RadioGroup rg;
@@ -82,7 +83,7 @@ public class SearchFull extends Activity implements OnClickListener {
 		if (query != "") {
 			showResult();
 		} else {
-			System.out.println("EMPTY FIELD");
+			Toast.makeText(this, "Нет результатов", Toast.LENGTH_LONG).show();
 		}
 	}
 
@@ -111,7 +112,13 @@ public class SearchFull extends Activity implements OnClickListener {
 		// формируем столбцы сопоставления
 		String[] from = new String[] { "title","number" };
 		int[] to = new int[] { R.id.title, R.id.itemNumber };
-
+		
+		if(c.getCount() == 0){
+			Toast.makeText(this, "Нет результатов", Toast.LENGTH_LONG).show();
+		}
+		
+		
+		
 		// создааем адаптер и настраиваем список
 		scAdapter = new SimpleCursorAdapter(this, R.layout.srhresult, c, from,	to);
 		ListView srhResult = (ListView) findViewById(R.id.srhResult);

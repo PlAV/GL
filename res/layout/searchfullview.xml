@@ -43,7 +43,7 @@
             android:layout_weight="1"
             android:checked="true"
             android:text="@string/CK"
-            android:textColor="#33CC33" />
+            android:textColor="#999966" />
 
         <RadioButton
             android:id="@+id/mk"
@@ -51,7 +51,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/MK"
-            android:textColor="#33CC33" />
+            android:textColor="#999966" />
 
         <RadioButton
             android:id="@+id/fc"
@@ -59,7 +59,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/FC"
-            android:textColor="#33CC33" />
+            android:textColor="#999966" />
        
     </RadioGroup>
 
@@ -70,16 +70,5 @@
         android:cacheColorHint="#00000000" >
 
     </ListView>
-
-    <TextView
-        android:id="@+id/noReLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="80dp"
-        android:gravity="center"
-        android:text="@string/search_no_records"
-        android:textColor="#808080"
-        android:textSize="16sp" />
 
 </LinearLayout>

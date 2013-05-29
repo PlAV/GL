@@ -165,8 +165,8 @@ public class Search extends Activity implements OnClickListener, OnLongClickList
 
 		if (idOfGroups.size() == 0) {
 
-			Toast.makeText(this, "Ќет результатов", Toast.LENGTH_LONG).show();
-
+			Toast.makeText(this, "Нет результатов", Toast.LENGTH_LONG).show();
+			System.out.println("EMPTY FIELD");
 		}
 
 		// список аттрибутов групп для чтения
