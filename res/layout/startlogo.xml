@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center"
-    android:background="@layout/bg"
+    android:background="#000"
     android:gravity="right"
     android:padding="5dp"
     tools:context=".MainActivity" >
@@ -26,7 +26,28 @@
 	     android:gravity="center"
 	     android:text="@string/logoTitle"
 	     android:textColor="#FFFFFF"
-	     android:textSize="20dp" />
+	     android:textSize="20sp" />
+
+	 <TextView
+	     android:id="@+id/logoTitle2"
+	     android:layout_width="match_parent"
+	     android:layout_height="wrap_content"
+	     android:layout_marginTop="50dp"
+	     android:gravity="center"
+	     android:text="@string/logoTitle2"
+	     android:textColor="#FFFFFF"
+	     android:textSize="14sp" />
+
+	 <TextView
+	     android:id="@+id/textYear"
+	     android:layout_width="match_parent"
+	     android:layout_height="match_parent"
+	     android:layout_marginBottom="5dp"
+	     android:layout_marginRight="5dp"
+	     android:gravity="bottom|center"
+	     android:text="@string/year"
+	     android:textColor="#FFFFFF"
+	     android:textSize="18sp" />
 
 	 <TextView
 	     android:id="@+id/textVersion"
@@ -35,30 +56,8 @@
 	     android:layout_marginBottom="5dp"
 	     android:layout_marginRight="5dp"
 	     android:gravity="bottom|right"
-	     android:text="@string/year"
-	     android:textColor="#FFFFFF" />
-
-	 <TextView
-	     android:id="@+id/linkUkrForum"
-	     android:layout_width="match_parent"
-	     android:layout_height="match_parent"
-	     android:layout_marginBottom="30dp"
-	     android:layout_marginLeft="10dp"
-	     android:autoLink="web"
-	     android:gravity="bottom|left"
-	     android:text="@string/linkUkrForum"
-	     android:textColor="#FFFFFF" />
-
-	 <TextView
-	     android:id="@+id/linkRusForum"
-	     android:layout_width="match_parent"
-	     android:layout_height="match_parent"
-	     android:layout_marginBottom="10dp"
-	     android:layout_marginLeft="10dp"
-	     android:autoLink="web"
-	     android:gravity="bottom|left"
-	     android:linksClickable="true"
-	     android:text="@string/linkRusForum"
-	     android:textColor="#FFFFFF" />
+	     android:text="@string/version"
+	     android:textColor="#FFFFFF"
+	     android:textSize="12sp" />
 
 </RelativeLayout>
