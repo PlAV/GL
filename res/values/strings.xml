@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Geely_MK_autoparts</string>
+    <string name="app_name">Geely_autoparts</string>
     <string name="hello_world">Hello world!</string>
     <string name="menu_settings">Settings</string>
 
@@ -27,7 +27,8 @@
     <string name="aboutText"> Данный каталог   представляет собой подборку  аналогов запчастей  для автомобилей Geely MK/MK2/CROSS,
        собранный благодаря стараниям пользователей украинского и российского джили клубов.
        Условием занесения артикула детали в  каталог, является предварительная установка и  подтверждение совместимости с указанным автомобилем.
-       Обращаю Ваше  внимание, что никто не дает 100% гарантии на  совместимость деталей, поэтому  перед покупкой убедитесь в правильном подборе аналога.</string>
+       Обращаю Ваше  внимание, что никто не дает 100% гарантии на  совместимость деталей, поэтому  перед покупкой убедитесь в правильном подборе аналога.
+</string>
     <string name="yes">Ознакомлен</string>
     
     
@@ -43,8 +44,13 @@
     <dimen name="menu_btn_height">30dp</dimen>
     <dimen name="menu_margtop_btn">2dp</dimen>
     <dimen name="menu_textsize_btn">16sp</dimen>
+    <string name="fdb_title">Выход</string>
+    <string name="fdb_text">Оставить отзыв о приложении ?</string>
+    <string name="fdb_yes">Да</string>
+    <string name="fdb_no">Нет</string>
    
     
    
 
-</resources>
+
+    </resources>

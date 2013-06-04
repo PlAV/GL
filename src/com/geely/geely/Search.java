@@ -27,7 +27,8 @@ import android.widget.SimpleExpandableListAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class Search extends Activity implements OnClickListener, OnLongClickListener {
+public class Search extends Activity implements OnClickListener,
+		OnLongClickListener {
 
 	private static final String DB_NAME = "geelyParts";
 	private static final String COLUMN_NAME = "tMark";
@@ -46,7 +47,7 @@ public class Search extends Activity implements OnClickListener, OnLongClickList
 	ListView LvData;
 	Intent incomInt;
 	TextView tmarkText;
-	
+
 	// коллекция для групп
 	ArrayList<Map<String, String>> groupData;
 
@@ -73,9 +74,6 @@ public class Search extends Activity implements OnClickListener, OnLongClickList
 		srhField = (EditText) findViewById(R.id.srhField);
 		srhAdd = (Button) findViewById(R.id.srhAdd);
 		srhAdd.setOnClickListener(this);
-		
-		
-		
 
 	}
 
@@ -165,7 +163,8 @@ public class Search extends Activity implements OnClickListener, OnLongClickList
 
 		if (idOfGroups.size() == 0) {
 
-			Toast.makeText(this, "Нет результатов", Toast.LENGTH_LONG).show();
+			Toast.makeText(this, R.string.search_no_records, Toast.LENGTH_LONG)
+					.show();
 			System.out.println("EMPTY FIELD");
 		}
 
@@ -239,9 +238,8 @@ public class Search extends Activity implements OnClickListener, OnLongClickList
 	@Override
 	public boolean onLongClick(View v) {
 		// TODO Auto-generated method stub
-		//System.out.println("test " + tmarkText.getText());
-		
-		
+		// System.out.println("test " + tmarkText.getText());
+
 		return false;
 	}
 }

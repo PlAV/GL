@@ -22,21 +22,22 @@
 	     android:id="@+id/logoTitle"
 	     android:layout_width="match_parent"
 	     android:layout_height="wrap_content"
-	     android:layout_marginTop="20dp"
+	     android:layout_marginTop="30dp"
 	     android:gravity="center"
 	     android:text="@string/logoTitle"
 	     android:textColor="#FFFFFF"
-	     android:textSize="20sp" />
+	     android:textSize="25sp"
+	     android:textStyle="bold" />
 
 	 <TextView
 	     android:id="@+id/logoTitle2"
 	     android:layout_width="match_parent"
 	     android:layout_height="wrap_content"
-	     android:layout_marginTop="50dp"
+	     android:layout_marginTop="70dp"
 	     android:gravity="center"
 	     android:text="@string/logoTitle2"
 	     android:textColor="#FFFFFF"
-	     android:textSize="14sp" />
+	     android:textSize="16sp" />
 
 	 <TextView
 	     android:id="@+id/textYear"
@@ -47,7 +48,8 @@
 	     android:gravity="bottom|center"
 	     android:text="@string/year"
 	     android:textColor="#FFFFFF"
-	     android:textSize="18sp" />
+	     android:textSize="18sp"
+	     android:textStyle="bold" />
 
 	 <TextView
 	     android:id="@+id/textVersion"
@@ -58,6 +60,7 @@
 	     android:gravity="bottom|right"
 	     android:text="@string/version"
 	     android:textColor="#FFFFFF"
-	     android:textSize="12sp" />
+	     android:textSize="12sp"
+	     android:textStyle="bold" />
 
 </RelativeLayout>

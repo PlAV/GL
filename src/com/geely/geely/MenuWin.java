@@ -3,7 +3,6 @@ package com.geely.geely;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
-import android.app.SearchManager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -14,7 +13,6 @@ import android.view.Window;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TableLayout;
 import android.widget.TextView;
 
@@ -50,7 +48,7 @@ public class MenuWin extends Activity implements OnClickListener {
 		tv10 = (TextView) findViewById(R.id.trim);
 		srhBtn = (Button) findViewById(R.id.srhBtn);
 		infoBtn = (Button) findViewById(R.id.infoBtn);
-		
+
 		tv1.setOnClickListener(this);
 		tv2.setOnClickListener(this);
 		tv3.setOnClickListener(this);
@@ -63,16 +61,12 @@ public class MenuWin extends Activity implements OnClickListener {
 		tv10.setOnClickListener(this);
 		srhBtn.setOnClickListener(this);
 		infoBtn.setOnClickListener(this);
-//		ImageView imgView = (ImageView) findViewById(R.id.imageView1);
-//		imgView.setAlpha(70);
-
-		
-		
-		
-		
+		// ImageView imgView = (ImageView) findViewById(R.id.imageView1);
+		// imgView.setAlpha(70);
 
 	}
 
+	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// TODO Auto-generated method stub
 
@@ -82,12 +76,14 @@ public class MenuWin extends Activity implements OnClickListener {
 		return super.onCreateOptionsMenu(menu);
 	}
 
+	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		// TODO Auto-generated method stub
 		showDialog(1);
 		return super.onOptionsItemSelected(item);
 	}
 
+	@Override
 	protected Dialog onCreateDialog(int id) {
 		AlertDialog.Builder adb = new AlertDialog.Builder(this);
 		adb.setTitle(R.string.aboutTitle);
@@ -175,7 +171,7 @@ public class MenuWin extends Activity implements OnClickListener {
 		case R.id.infoBtn:
 			showDialog(1);
 			return;
-			
+
 		}
 
 		intent.putExtra("group", group);

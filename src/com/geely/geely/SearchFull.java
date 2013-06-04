@@ -1,6 +1,5 @@
 package com.geely.geely;
 
-
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
@@ -39,12 +38,13 @@ public class SearchFull extends Activity implements OnClickListener {
 	ListView LvData;
 	Intent incomInt;
 
+	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.searchfullview);
 
-		System.out.println("Ready for full search");
+		// System.out.println("Ready for full search");
 
 		rg = (RadioGroup) findViewById(R.id.radioGroupMarks);
 
@@ -74,19 +74,18 @@ public class SearchFull extends Activity implements OnClickListener {
 		imm.hideSoftInputFromWindow(v.getApplicationWindowToken(),
 				InputMethodManager.HIDE_NOT_ALWAYS);
 
-		System.out.println("Click on fullSrhBtn");
+		// System.out.println("Click on fullSrhBtn");
 
 		query = fullSrhField.getText().toString();
-		System.out.println("query");
+		// System.out.println("query");
 		query = query.replaceAll(" ", "");
-		System.out.println("QUERY " + query);
+		// System.out.println("QUERY " + query);
 		if (query != "") {
 			showResult();
-		} else {
-			Toast.makeText(this, "Нет результатов", Toast.LENGTH_LONG).show();
 		}
 	}
 
+	@SuppressWarnings("deprecation")
 	@SuppressLint("DefaultLocale")
 	private void showResult() {
 
@@ -98,7 +97,7 @@ public class SearchFull extends Activity implements OnClickListener {
 				DB_NAME);
 		database = dbOpenHelper.openDataBase();
 
-		// * Находим список категорий согласно поиску
+		// * Ќаходим список категорий согласно поиску
 		// */
 		// // заполняем коллекцию групп из массива с названиями групп
 		System.out.println("queryStr " + queryStr);
@@ -110,17 +109,18 @@ public class SearchFull extends Activity implements OnClickListener {
 		//
 		c = database.rawQuery(sqlQuery, null);
 		// формируем столбцы сопоставления
-		String[] from = new String[] { "title","number" };
+		String[] from = new String[] { "title", "number" };
 		int[] to = new int[] { R.id.title, R.id.itemNumber };
-		
-		if(c.getCount() == 0){
-			Toast.makeText(this, "Нет результатов", Toast.LENGTH_LONG).show();
+		System.out.println("CPUNT= " + c.getCount());
+		if (c.getCount() == 0) {
+			Toast.makeText(this, R.string.search_no_records, Toast.LENGTH_LONG)
+					.show();
+			return;
 		}
-		
-		
-		
+
 		// создааем адаптер и настраиваем список
-		scAdapter = new SimpleCursorAdapter(this, R.layout.srhresult, c, from,	to);
+		scAdapter = new SimpleCursorAdapter(this, R.layout.srhresult, c, from,
+				to);
 		ListView srhResult = (ListView) findViewById(R.id.srhResult);
 		srhResult.setAdapter(scAdapter);
 

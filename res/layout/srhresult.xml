@@ -9,8 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="TextView"
-        android:textColor="#666633"
+        android:textColor="#B8B894"
         android:textSize="16sp" />
 
     <TextView
@@ -18,7 +17,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="TextView"
         android:textColor="#FFFFFF"
         android:textSize="18sp" />
 
