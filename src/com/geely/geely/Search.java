@@ -228,7 +228,7 @@ public class Search extends Activity implements OnClickListener,
 
 		SimpleExpandableListAdapter adapter = new SimpleExpandableListAdapter(
 				this, groupData, R.layout.group, groupFrom, groupTo, childData,
-				R.layout.items, childFrom, childTo);
+				R.layout.srhresult, childFrom, childTo);
 
 		elvMain.setAdapter(adapter);
 

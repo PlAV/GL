@@ -102,8 +102,9 @@ public class SearchFull extends Activity implements OnClickListener {
 		// // заполняем коллекцию групп из массива с названиями групп
 		System.out.println("queryStr " + queryStr);
 
-		sqlQuery = "SELECT _id, number, title  FROM geely_full WHERE (title LIKE '%"
-				+ queryStr + "%' AND car_mark LIKE '%" + checkedBtn + "%')";
+		sqlQuery = "SELECT _id, number, title  FROM geely_full WHERE "
+				+ "((title LIKE '%" + queryStr + "%' OR  number LIKE '%"
+				+ queryStr + "%')  AND car_mark LIKE '%" + checkedBtn + "%')";
 		//
 		Log.d("SQL-", sqlQuery);
 		//
@@ -115,12 +116,12 @@ public class SearchFull extends Activity implements OnClickListener {
 		if (c.getCount() == 0) {
 			Toast.makeText(this, R.string.search_no_records, Toast.LENGTH_LONG)
 					.show();
-			return;
+
 		}
 
 		// создааем адаптер и настраиваем список
-		scAdapter = new SimpleCursorAdapter(this, R.layout.srhresult, c, from,
-				to);
+		scAdapter = new SimpleCursorAdapter(this, R.layout.srhfullresult, c,
+				from, to);
 		ListView srhResult = (ListView) findViewById(R.id.srhResult);
 		srhResult.setAdapter(scAdapter);
 

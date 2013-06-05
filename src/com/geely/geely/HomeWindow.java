@@ -27,7 +27,7 @@ public class HomeWindow extends Activity implements OnClickListener {
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.homewindow);
 
-		analogMK = (TextView) findViewById(R.id.analogMK);
+		analogMK = (TextView) findViewById(R.id.analogMk);
 		originAll = (TextView) findViewById(R.id.originAll);
 		analogMkInt = new Intent(this, MenuWin.class);
 		originAllInt = new Intent(this, SearchFull.class);
@@ -48,7 +48,7 @@ public class HomeWindow extends Activity implements OnClickListener {
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
 		switch (v.getId()) {
-		case R.id.analogMK:
+		case R.id.analogMk:
 			startActivity(analogMkInt);
 			break;
 		case R.id.originAll:

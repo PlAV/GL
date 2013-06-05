@@ -141,7 +141,7 @@ public class ExpandList extends Activity {
 		Log.d("TEST", "TEST");
 		SimpleExpandableListAdapter adapter = new SimpleExpandableListAdapter(
 				context, groupData, R.layout.group, groupFrom, groupTo,
-				childData, R.layout.items, childFrom, childTo);
+				childData, R.layout.srhresult, childFrom, childTo);
 
 		elvMain.addHeaderView(headerView);
 		elvMain.setAdapter(adapter);
