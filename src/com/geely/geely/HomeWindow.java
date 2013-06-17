@@ -18,7 +18,7 @@ public class HomeWindow extends Activity implements OnClickListener {
 	Intent analogMkInt, originAllInt;
 	public final int DIALOG_EXIT = 1;
 
-	public static Boolean sentFdb = false;
+	public static Boolean ask_fdb = true;
 	public static int countLaunch = 0;
 
 	@Override
@@ -33,14 +33,14 @@ public class HomeWindow extends Activity implements OnClickListener {
 		originAllInt = new Intent(this, SearchFull.class);
 		analogMK.setOnClickListener(this);
 		originAll.setOnClickListener(this);
-		if (sentFdb == true) {
-			if (++countLaunch % 10 == 0) {
-				sentFdb = false;
+		if (!ask_fdb) {
+			if (++countLaunch % 5 == 0) {
+				ask_fdb = true;
 			}
 		}
 
-		System.out.println("countLaunch= " + countLaunch + "sentFdb= "
-				+ sentFdb);
+		System.out.println("countLaunch= " + countLaunch + "ask_fdb= "
+				+ ask_fdb);
 
 	}
 
@@ -59,7 +59,7 @@ public class HomeWindow extends Activity implements OnClickListener {
 
 	@Override
 	public void onBackPressed() {
-		if (!sentFdb) {
+		if (ask_fdb) {
 			showDialog(DIALOG_EXIT);
 		} else {
 			finish();
@@ -84,8 +84,7 @@ public class HomeWindow extends Activity implements OnClickListener {
 						@Override
 						public void onClick(DialogInterface dialog, int arg1) {
 							// отмечаем согласие на отзыв
-							sentFdb = true;
-							countLaunch = 0;
+							ask_fdb = false;
 							Intent intentOnExit = new Intent(Intent.ACTION_VIEW);
 							intentOnExit.setData(Uri
 									.parse("market://details?id=com.geely.geely")); // market://details?id=com.geely.geely
@@ -98,6 +97,18 @@ public class HomeWindow extends Activity implements OnClickListener {
 					new DialogInterface.OnClickListener() {
 						@Override
 						public void onClick(DialogInterface dialog, int arg1) {
+							ask_fdb = false;
+							finish();
+						}
+
+					});
+			adb.setNeutralButton(R.string.fdb_later,
+					new DialogInterface.OnClickListener() {
+						@Override
+						public void onClick(DialogInterface dialog, int arg1) {
+							ask_fdb = false;
+							countLaunch = 0;
+
 							finish();
 						}
 

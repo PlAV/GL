@@ -141,6 +141,7 @@ public final class R {
         public static final int app_name=0x7f050000;
         public static final int chooseModel=0x7f05000d;
         public static final int cursor=0x7f050005;
+        public static final int fdb_later=0x7f05001c;
         public static final int fdb_no=0x7f05001b;
         public static final int fdb_text=0x7f050019;
         public static final int fdb_title=0x7f050018;
