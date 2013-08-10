@@ -5,6 +5,7 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -22,6 +23,8 @@ public class MenuWin extends Activity implements OnClickListener {
 	int num;
 	Intent intent, srhIntent;
 	Button srhBtn, infoBtn;
+
+	Handler h = new Handler();
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -63,8 +66,15 @@ public class MenuWin extends Activity implements OnClickListener {
 		infoBtn.setOnClickListener(this);
 		// ImageView imgView = (ImageView) findViewById(R.id.imageView1);
 		// imgView.setAlpha(70);
+		
+		new Api(this, "http://pav.net.ua/www/post?test=555").execute("");
+		
+		
+		
 
 	}
+
+	
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
